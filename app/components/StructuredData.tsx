@@ -1,58 +1,25 @@
-import { brand, siteUrl, plans } from "../lib/content";
+import { brand, demo, siteUrl } from "../lib/content";
 
 /*
- * LocalBusiness (gym) structured data for local SEO / rich results.
- * Kept in sync with the visible contact + membership details.
+ * WebSite structured data. This is a portfolio demo and IronForge Fitness is a
+ * fictional gym, so we deliberately avoid LocalBusiness/HealthClub schema
+ * (address, hours, prices) that would describe a business that doesn't exist.
+ * For a real client, swap this for a LocalBusiness schema with their details.
  */
-const prices = plans.map((p) => p.price);
-const inr = new Intl.NumberFormat("en-IN");
-
 const schema = {
   "@context": "https://schema.org",
-  "@type": ["HealthClub", "ExerciseGym"],
-  name: brand.full,
-  description:
-    "Premium gym in Kolkata offering expert coaching, strength and personal training, weight loss and functional programs.",
+  "@type": "WebSite",
+  name: `${brand.full} — Gym Website Demo`,
   url: siteUrl,
-  telephone: "+91-74659-45752",
-  email: "punittomar777@gmail.com",
-  image:
-    "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80",
-  priceRange: `₹${inr.format(Math.min(...prices))} - ₹${inr.format(Math.max(...prices))}`,
-  currenciesAccepted: "INR",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "14 Camac Street",
-    addressLocality: "Kolkata",
-    addressRegion: "West Bengal",
-    postalCode: "700017",
-    addressCountry: "IN",
+  description:
+    "A portfolio demo website for a fictional gym, designed and built by Punit Tomar.",
+  inLanguage: "en",
+  creator: {
+    "@type": "Person",
+    name: demo.author,
+    url: demo.authorUrl,
+    sameAs: [demo.portfolioUrl],
   },
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: 22.5488,
-    longitude: 88.3529,
-  },
-  openingHoursSpecification: [
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      opens: "05:00",
-      closes: "23:00",
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: "Saturday",
-      opens: "06:00",
-      closes: "22:00",
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: "Sunday",
-      opens: "07:00",
-      closes: "20:00",
-    },
-  ],
 } as const;
 
 export default function StructuredData() {

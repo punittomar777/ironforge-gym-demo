@@ -1,11 +1,11 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { CheckCircle2, MapPin, Loader2, AlertCircle } from "lucide-react";
+import { CheckCircle2, Loader2, AlertCircle, Info } from "lucide-react";
 import Button from "./ui/Button";
 import SectionHeading from "./ui/SectionHeading";
 import { WhatsAppIcon } from "./ui/BrandIcons";
-import { contactDetails, openingHours, plans, whatsappUrl } from "../lib/content";
+import { contactDetails, demo, plans, whatsappUrl } from "../lib/content";
 
 interface FormState {
   name: string;
@@ -120,12 +120,19 @@ export default function Contact() {
           id="contact-heading"
           eyebrow="Contact"
           title="Let's get you started."
-          description="Send an enquiry and the team will get back to you within one business day — or just drop by. We'd love to show you around."
+          description="Send an enquiry directly to Punit Tomar, the developer behind this demo website."
         />
 
         <div className="mt-14 grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
           {/* Form */}
           <div>
+            <p className="mb-6 flex items-start gap-2 border border-border bg-surface px-4 py-3 text-sm text-muted">
+              <Info className="mt-0.5 h-4 w-4 shrink-0 text-accent" aria-hidden />
+              <span>
+                This is a demo website. Enquiries are sent directly to the
+                developer, {demo.author}.
+              </span>
+            </p>
             {submitted ? (
               <div
                 role="status"
@@ -307,7 +314,7 @@ export default function Contact() {
                 Prefer to talk now?
               </p>
               <p className="mt-1 text-sm text-muted">
-                Message us on WhatsApp and a coach will reply within minutes.
+                Chat directly with Punit Tomar about your website project.
               </p>
               <Button
                 href={whatsappUrl}
@@ -354,47 +361,6 @@ export default function Contact() {
                 );
               })}
             </ul>
-
-            {/* Hours */}
-            <div className="border border-border bg-surface p-6">
-              <h3 className="font-display text-sm font-semibold uppercase tracking-widest text-foreground">
-                Opening hours
-              </h3>
-              <dl className="mt-4 space-y-2.5">
-                {openingHours.map((row) => (
-                  <div
-                    key={row.days}
-                    className="flex justify-between text-sm"
-                  >
-                    <dt className="text-muted">{row.days}</dt>
-                    <dd className="text-foreground">{row.time}</dd>
-                  </div>
-                ))}
-              </dl>
-            </div>
-
-            {/* Map placeholder */}
-            <div
-              className="relative flex aspect-[16/9] items-center justify-center overflow-hidden border border-border bg-surface"
-              role="img"
-              aria-label="Map showing IronForge Fitness location on Camac Street, Kolkata"
-            >
-              <div
-                className="absolute inset-0 opacity-[0.15]"
-                style={{
-                  backgroundImage:
-                    "linear-gradient(var(--color-border-strong) 1px, transparent 1px), linear-gradient(90deg, var(--color-border-strong) 1px, transparent 1px)",
-                  backgroundSize: "36px 36px",
-                }}
-                aria-hidden
-              />
-              <div className="relative flex flex-col items-center gap-2 text-center">
-                <MapPin className="h-7 w-7 text-accent" aria-hidden />
-                <span className="text-sm text-muted">
-                  14 Camac Street, Kolkata
-                </span>
-              </div>
-            </div>
           </div>
         </div>
       </div>

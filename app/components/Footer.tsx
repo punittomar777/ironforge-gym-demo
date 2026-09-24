@@ -4,6 +4,7 @@ import {
   navLinks,
   socials,
   contactDetails,
+  demo,
 } from "../lib/content";
 
 export default function Footer() {
@@ -11,7 +12,7 @@ export default function Footer() {
 
   return (
     <footer className="border-t border-border bg-surface">
-      <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8">
+      <div className="mx-auto max-w-7xl px-5 pb-24 pt-16 sm:px-8 sm:pb-16">
         <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
           {/* Brand */}
           <div>
@@ -94,7 +95,18 @@ export default function Footer() {
           <p>
             © {year} {brand.full}. All rights reserved.
           </p>
-          <p>Crafted for stronger results.</p>
+          <p className="text-center sm:text-right">
+            Demo website — {brand.full} is a fictional gym. Designed &amp; built by{" "}
+            <a
+              href={demo.portfolioUrl}
+              target="_blank"
+              rel="noopener"
+              className="text-muted underline-offset-4 transition-colors hover:text-accent hover:underline"
+            >
+              {demo.author}
+            </a>
+            .
+          </p>
         </div>
       </div>
     </footer>

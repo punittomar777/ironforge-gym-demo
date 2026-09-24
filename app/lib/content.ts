@@ -9,7 +9,6 @@ import {
   Sparkles,
   Phone,
   Mail,
-  MapPin,
   type LucideIcon,
 } from "lucide-react";
 import type { ComponentType, SVGProps } from "react";
@@ -30,7 +29,17 @@ export const brand = {
 } as const;
 
 // Canonical/production URL — replace with the client's real domain on deploy.
-export const siteUrl = "https://ironforgefitness.example.com";
+export const siteUrl = "https://gym-demo.punittomar.com";
+
+/*
+ * This site is a portfolio demo — IronForge Fitness is a fictional gym.
+ * Used for the demo notice, metadata and structured data.
+ */
+export const demo = {
+  author: "Punit Tomar",
+  authorUrl: "https://punittomar.com",
+  portfolioUrl: "https://studio.punittomar.com",
+} as const;
 
 /*
  * WhatsApp click-to-chat.
@@ -340,23 +349,6 @@ export const contactDetails: ContactItem[] = [
     value: "punittomar777@gmail.com",
     href: "mailto:punittomar777@gmail.com",
   },
-  {
-    icon: MapPin,
-    label: "Address",
-    value: "14 Camac Street, Kolkata 700017",
-    href: "https://maps.google.com/?q=Camac+Street+Kolkata",
-  },
-];
-
-export interface Hours {
-  days: string;
-  time: string;
-}
-
-export const openingHours: Hours[] = [
-  { days: "Mon – Fri", time: "5:00 AM – 11:00 PM" },
-  { days: "Saturday", time: "6:00 AM – 10:00 PM" },
-  { days: "Sunday", time: "7:00 AM – 8:00 PM" },
 ];
 
 /* ------------------------------------------------------------------ */

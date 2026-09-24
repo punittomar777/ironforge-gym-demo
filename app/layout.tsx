@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Oswald } from "next/font/google";
-import { siteUrl } from "./lib/content";
+import { demo, siteUrl } from "./lib/content";
 import "./globals.css";
 
 const inter = Inter({
@@ -16,51 +16,55 @@ const oswald = Oswald({
   display: "swap",
 });
 
+const title = "IronForge Fitness — Gym Website Demo";
 const description =
-  "IronForge Fitness is a premium gym offering expert coaching, strength and personal training, and modern equipment. Join 1000+ members forging real results.";
+  "IronForge Fitness is a fictional gym — a portfolio demo website by Punit Tomar showcasing a fast, mobile-first gym site with programs, trainers, membership plans, a contact form and WhatsApp chat.";
+const ogImage = {
+  url: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&h=630&q=80",
+  width: 1200,
+  height: 630,
+  alt: "Athlete training with a barbell in a dark gym",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "IronForge Fitness — Premium Gym & Personal Training",
-    template: "%s | IronForge Fitness",
+    default: title,
+    template: "%s | IronForge Fitness Demo",
   },
   description,
   keywords: [
-    "gym",
-    "fitness",
-    "personal training",
-    "strength training",
-    "weight loss",
-    "functional training",
-    "IronForge Fitness",
+    "gym website demo",
+    "fitness website template",
+    "gym landing page",
+    "Next.js gym website",
+    "web design portfolio",
+    "Punit Tomar",
   ],
-  authors: [{ name: "IronForge Fitness" }],
+  authors: [{ name: demo.author, url: demo.authorUrl }],
+  creator: demo.author,
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
-    url: siteUrl,
-    siteName: "IronForge Fitness",
-    title: "IronForge Fitness — Premium Gym & Personal Training",
+    url: "/",
+    siteName: "IronForge Fitness (Demo)",
+    title,
     description,
-    images: [
-      {
-        url: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80",
-        width: 1200,
-        height: 630,
-        alt: "IronForge Fitness gym floor",
-      },
-    ],
+    locale: "en_IN",
+    images: [ogImage],
   },
   twitter: {
     card: "summary_large_image",
-    title: "IronForge Fitness — Premium Gym & Personal Training",
+    title,
     description,
+    images: [ogImage],
   },
   robots: { index: true, follow: true },
 };
 
 export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
   themeColor: "#09090b",
   colorScheme: "dark",
 };

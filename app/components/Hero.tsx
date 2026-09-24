@@ -16,7 +16,7 @@ export default function Hero() {
           src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=2000&q=80"
           alt="Athlete training with a barbell in a dark gym"
           fill
-          priority
+          preload
           sizes="100vw"
           className="object-cover"
         />
