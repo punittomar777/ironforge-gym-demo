@@ -28,9 +28,9 @@ export default function Trainers() {
                   sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 100vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/10 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#09090b]/90 via-[#09090b]/10 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-6">
-                  <p className="eyebrow">{trainer.specialty}</p>
+                  <p className="eyebrow text-[#ff4d1e]">{trainer.specialty}</p>
                   <h3 className="display mt-1.5 text-2xl text-white">
                     {trainer.name}
                   </h3>

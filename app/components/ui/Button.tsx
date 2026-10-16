@@ -16,7 +16,7 @@ const variants: Record<Variant, string> = {
   primary:
     "bg-accent text-white shadow-[0_8px_30px_-8px_rgba(255,77,30,0.6)] hover:bg-accent-hover hover:-translate-y-0.5",
   secondary:
-    "border border-border-strong bg-white/[0.02] text-foreground hover:border-accent hover:bg-white/[0.05]",
+    "border border-border-strong bg-foreground/[0.02] text-foreground hover:border-accent hover:bg-foreground/[0.05]",
   ghost: "text-foreground hover:text-accent",
   whatsapp:
     "bg-[#25D366] text-[#0b141a] shadow-[0_8px_30px_-8px_rgba(37,211,102,0.55)] hover:bg-[#20c65e] hover:-translate-y-0.5",

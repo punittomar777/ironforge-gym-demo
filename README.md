@@ -34,3 +34,17 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Local validation
+
+Run `npm run check` on `staging` before pushing. It runs lint, generates current
+Next.js route types, checks TypeScript, and builds production output sequentially.
+Stop `next dev` first so generated files are not rewritten during checking.
+
+`.next` is disposable generated output, not source. Do not sync or restore it
+between machines. If numbered duplicates appear there, stop Next.js, move the
+entire `.next` directory outside the checkout, and regenerate it with the checks;
+do not exclude declaration errors or enable `ignoreBuildErrors`.
+
+Security patch details and remaining development-only findings are recorded in
+[the staging remediation report](docs/staging-remediation.md).

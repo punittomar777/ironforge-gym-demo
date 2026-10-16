@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import { WhatsAppIcon } from "./ui/BrandIcons";
 import { whatsappUrl } from "../lib/content";
 
@@ -6,13 +9,24 @@ import { whatsappUrl } from "../lib/content";
  * Circle on mobile, expands to a labelled pill on larger screens.
  */
 export default function WhatsAppFab() {
+  const [mapVisible, setMapVisible] = useState(false);
+
+  useEffect(() => {
+    const map = document.getElementById("contact-map");
+    if (!map) return;
+    // Keep Google's bottom-right controls clear while the map is in view.
+    const observer = new IntersectionObserver(([entry]) => setMapVisible(entry.isIntersecting));
+    observer.observe(map);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <a
       href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat with IronForge on WhatsApp"
-      className="fixed bottom-5 right-5 z-40 flex h-14 w-14 items-center justify-center gap-3 rounded-full bg-[#25D366] text-[#0b141a] shadow-lg shadow-[#25D366]/30 transition-transform duration-200 hover:scale-105 sm:w-auto sm:px-5"
+      className={`fixed bottom-5 ${mapVisible ? "left-5" : "right-5"} z-40 flex h-14 w-14 items-center justify-center gap-3 rounded-full bg-[#25D366] text-[#0b141a] shadow-lg shadow-[#25D366]/30 transition-transform duration-200 hover:scale-105 sm:w-auto sm:px-5`}
     >
       <WhatsAppIcon className="h-7 w-7 shrink-0" aria-hidden />
       <span className="hidden font-display text-sm font-semibold uppercase tracking-wide sm:inline">

@@ -39,6 +39,7 @@ export const demo = {
   author: "Punit Tomar",
   authorUrl: "https://punittomar.com",
   portfolioUrl: "https://studio.punittomar.com",
+  email: "website@punittomar.com",
 } as const;
 
 /*
@@ -345,9 +346,9 @@ export const contactDetails: ContactItem[] = [
   },
   {
     icon: Mail,
-    label: "Email",
-    value: "punittomar777@gmail.com",
-    href: "mailto:punittomar777@gmail.com",
+    label: "Website Demo Enquiries",
+    value: demo.email,
+    href: `mailto:${demo.email}`,
   },
 ];
 
@@ -366,3 +367,13 @@ export const socials: Social[] = [
   { label: "Facebook", href: "https://facebook.com", icon: FacebookIcon },
   { label: "YouTube", href: "https://youtube.com", icon: YoutubeIcon },
 ];
+
+// Public area shown on the demo map, not an IronForge business address.
+// When changing location, replace the Google-generated embed and destination here together.
+export const demoLocation = {
+  name: "Modinagar, Uttar Pradesh, India",
+  query: "Modinagar, Uttar Pradesh, India",
+  embedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d55921.6768533837!2d77.53066043610202!3d28.83573964164258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390c8aaeec09f0cf%3A0xb1471116544b1093!2sModinagar%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1792158730216!5m2!1sen!2sin",
+} as const;
+
+export const demoDirectionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(demoLocation.query)}`;
