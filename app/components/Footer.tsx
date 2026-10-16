@@ -70,7 +70,7 @@ export default function Footer() {
           {/* Contact */}
           <div>
             <h2 className="font-display text-sm font-semibold uppercase tracking-widest text-foreground">
-              Get in touch
+              Contact Developer
             </h2>
             <ul className="mt-5 space-y-3">
               {contactDetails.map((item) => (
@@ -100,7 +100,7 @@ export default function Footer() {
             <a
               href={demo.portfolioUrl}
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               className="text-muted underline-offset-4 transition-colors hover:text-accent hover:underline"
             >
               {demo.author}

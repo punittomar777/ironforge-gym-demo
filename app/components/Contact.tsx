@@ -5,6 +5,7 @@ import { CheckCircle2, Loader2, AlertCircle, Info } from "lucide-react";
 import Button from "./ui/Button";
 import SectionHeading from "./ui/SectionHeading";
 import { WhatsAppIcon } from "./ui/BrandIcons";
+import DemoMap from "./DemoMap";
 import { contactDetails, demo, plans, whatsappUrl } from "../lib/content";
 
 interface FormState {
@@ -361,6 +362,7 @@ export default function Contact() {
                 );
               })}
             </ul>
+            <DemoMap />
           </div>
         </div>
       </div>

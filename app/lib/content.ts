@@ -39,6 +39,7 @@ export const demo = {
   author: "Punit Tomar",
   authorUrl: "https://punittomar.com",
   portfolioUrl: "https://studio.punittomar.com",
+  email: "website@punittomar.com",
 } as const;
 
 /*
@@ -345,9 +346,9 @@ export const contactDetails: ContactItem[] = [
   },
   {
     icon: Mail,
-    label: "Email",
-    value: "punittomar777@gmail.com",
-    href: "mailto:punittomar777@gmail.com",
+    label: "Website Demo Enquiries",
+    value: demo.email,
+    href: `mailto:${demo.email}`,
   },
 ];
 
@@ -366,3 +367,13 @@ export const socials: Social[] = [
   { label: "Facebook", href: "https://facebook.com", icon: FacebookIcon },
   { label: "YouTube", href: "https://youtube.com", icon: YoutubeIcon },
 ];
+
+// Illustrative landmark only; never used as a gym address or business schema.
+export const demoLocation = {
+  name: "India Gate, New Delhi",
+  query: "India Gate, New Delhi, India",
+  notice: "Demo Location - For Illustration Only",
+} as const;
+
+export const demoMapUrl = `https://www.google.com/maps?q=${encodeURIComponent(demoLocation.query)}&output=embed`;
+export const demoDirectionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(demoLocation.query)}`;

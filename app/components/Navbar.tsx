@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Menu, X, Dumbbell } from "lucide-react";
+import ThemeToggle from "./ThemeToggle";
 import Button from "./ui/Button";
 import { brand, navLinks } from "../lib/content";
 
@@ -68,23 +69,26 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <div className="hidden lg:block">
-          <Button href="#contact" size="md">
-            Start Your Journey
-          </Button>
-        </div>
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
+          <div className="hidden lg:block">
+            <Button href="#contact" size="md">
+              Start Your Journey
+            </Button>
+          </div>
 
-        {/* Mobile toggle */}
-        <button
-          type="button"
-          className="grid h-11 w-11 place-items-center text-foreground lg:hidden"
-          aria-label={open ? "Close menu" : "Open menu"}
-          aria-expanded={open}
-          aria-controls="mobile-menu"
-          onClick={() => setOpen((v) => !v)}
-        >
-          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
+          {/* Mobile toggle */}
+          <button
+            type="button"
+            className="grid h-11 w-11 place-items-center text-foreground lg:hidden"
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+            onClick={() => setOpen((v) => !v)}
+          >
+            {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
       </nav>
 
       {/* Mobile menu */}
