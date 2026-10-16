@@ -6,7 +6,7 @@ import Button from "./ui/Button";
 import SectionHeading from "./ui/SectionHeading";
 import { WhatsAppIcon } from "./ui/BrandIcons";
 import DemoMap from "./DemoMap";
-import { contactDetails, demo, plans, whatsappUrl } from "../lib/content";
+import { demo, plans, whatsappUrl } from "../lib/content";
 
 interface FormState {
   name: string;
@@ -124,7 +124,7 @@ export default function Contact() {
           description="Send an enquiry directly to Punit Tomar, the developer behind this demo website."
         />
 
-        <div className="mt-14 grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+        <div className="mt-14 grid items-start gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
           {/* Form */}
           <div>
             <p className="mb-6 flex items-start gap-2 border border-border bg-surface px-4 py-3 text-sm text-muted">
@@ -307,63 +307,7 @@ export default function Contact() {
             )}
           </div>
 
-          {/* Details */}
-          <div className="space-y-8">
-            {/* Quick chat — the fastest lead channel for a local gym */}
-            <div className="border border-[#25D366]/30 bg-[#25D366]/[0.06] p-6">
-              <p className="font-display text-lg font-semibold uppercase tracking-wide text-foreground">
-                Prefer to talk now?
-              </p>
-              <p className="mt-1 text-sm text-muted">
-                Chat directly with Punit Tomar about your website project.
-              </p>
-              <Button
-                href={whatsappUrl}
-                variant="whatsapp"
-                size="lg"
-                className="mt-5 w-full"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <WhatsAppIcon className="h-5 w-5" aria-hidden />
-                Chat on WhatsApp
-              </Button>
-            </div>
-
-            <ul className="space-y-5">
-              {contactDetails.map((item) => {
-                const Icon = item.icon;
-                const content = (
-                  <>
-                    <span className="grid h-11 w-11 shrink-0 place-items-center bg-accent-soft text-accent">
-                      <Icon className="h-5 w-5" aria-hidden />
-                    </span>
-                    <span>
-                      <span className="block text-xs uppercase tracking-wider text-subtle">
-                        {item.label}
-                      </span>
-                      <span className="text-foreground">{item.value}</span>
-                    </span>
-                  </>
-                );
-                return (
-                  <li key={item.label}>
-                    {item.href ? (
-                      <a
-                        href={item.href}
-                        className="flex items-center gap-4 transition-colors hover:text-accent"
-                      >
-                        {content}
-                      </a>
-                    ) : (
-                      <div className="flex items-center gap-4">{content}</div>
-                    )}
-                  </li>
-                );
-              })}
-            </ul>
-            <DemoMap />
-          </div>
+          <DemoMap />
         </div>
       </div>
     </section>
