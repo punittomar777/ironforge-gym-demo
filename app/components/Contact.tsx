@@ -124,7 +124,7 @@ export default function Contact() {
           description="Send an enquiry directly to Punit Tomar, the developer behind this demo website."
         />
 
-        <div className="mt-14 grid items-start gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+        <div className="mt-14 grid items-start gap-12 lg:grid-cols-2 lg:gap-12">
           {/* Form */}
           <div>
             <p className="mb-6 flex items-start gap-2 border border-border bg-surface px-4 py-3 text-sm text-muted">
